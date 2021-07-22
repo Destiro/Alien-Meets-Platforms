@@ -45,6 +45,7 @@ AdebruconnAss1Character::AdebruconnAss1Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+	SprintSpeedMultiplier = 2.0f;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -74,6 +75,10 @@ void AdebruconnAss1Character::SetupPlayerInputComponent(class UInputComponent* P
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AdebruconnAss1Character::OnResetVR);
+
+	//Sprint functionality
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &AdebruconnAss1Character::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &AdebruconnAss1Character::StopSprinting);
 }
 
 
@@ -137,4 +142,12 @@ void AdebruconnAss1Character::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void AdebruconnAss1Character::Sprint() {
+	GetCharacterMovement()->MaxWalkSpeed *= SprintSpeedMultiplier;
+}
+
+void AdebruconnAss1Character::StopSprinting() {
+	GetCharacterMovement()->MaxWalkSpeed /= SprintSpeedMultiplier;
 }

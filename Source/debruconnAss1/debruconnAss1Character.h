@@ -29,6 +29,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Character Movement: Walking")
+	float SprintSpeedMultiplier;
+
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -57,6 +60,10 @@ protected:
 
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
+
+	/** Creates sprinting by changing speed after input, and stops after input release */
+	void Sprint();
+	void StopSprinting();
 
 protected:
 	// APawn interface
