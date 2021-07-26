@@ -3,7 +3,7 @@
 * **Your name:** Connor de Bruyn (debruconn)
 * **Assignment number:** 1
 * **Title of Game:** Alien meets Platforms
-* **Video URL:** 
+* **Video URL:** https://youtu.be/MjTca1aiJmk
 
 <br>
 
