@@ -1,2 +1,7 @@
 # debruconnAss1
-An Unreal Engine 4.26.2 3D platformer game, where you can shoot platforms to reach checkpoints
+Course code: COMP313 - Computer Game Development
+Your name: Connor de Bruyn (debruconn)
+Assignment number: 1
+Title of Game: Alien meets Platforms
+Video URL: 
+
